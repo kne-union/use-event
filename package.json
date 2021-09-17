@@ -1,0 +1,29 @@
+{
+  "name": "@kne/use-event",
+  "version": "0.1.0",
+  "description": "实现了事件总线的hooks，是fbemitter的再封装",
+  "main": "index.js",
+  "module": "index.modern.js",
+  "source": "src/index.js",
+  "scripts": {
+    "build": "microbundle --no-compress --format modern,cjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "index.js",
+    "index.js.map",
+    "index.modern.js",
+    "index.modern.js.map"
+  ],
+  "author": "linzp",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "16.x"
+  },
+  "dependencies": {
+    "fbemitter": "^3.0.0"
+  },
+  "devDependencies": {
+    "microbundle": "^0.13.3"
+  }
+}
