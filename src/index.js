@@ -19,8 +19,8 @@ class FormEventEmitter extends EventEmitter {
   }
 }
 
-const useEvent = debug => {
-  const debugRef = useRef(debug);
+const useEvent = options => {
+  const debugRef = useRef(options);
   return useMemo(() => {
     const emitter = new FormEventEmitter(debugRef.current);
     return {

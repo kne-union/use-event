@@ -1,0 +1,24 @@
+{
+  "isFull": false,
+  "list": [
+    {
+      "title": "基本事件示例",
+      "description": "展示了在一个组件里监听事件，在另一个组件里面触发事件的简单场景",
+      "code": "./base.js",
+      "scope": [
+        {
+          "name": "_useEvent",
+          "packageName": "@kne/use-event"
+        },
+        {
+          "name": "button",
+          "packageName": "antd/lib/button"
+        },
+        {
+          "name": "_message",
+          "packageName": "antd/lib/message"
+        }
+      ]
+    }
+  ]
+}

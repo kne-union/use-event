@@ -1,13 +1,30 @@
 {
   "name": "@kne/use-event",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "实现了事件总线的hooks，是fbemitter的再封装",
+  "syntax": {
+    "esmodules": true
+  },
   "main": "index.js",
   "module": "index.modern.js",
   "source": "src/index.js",
   "scripts": {
-    "build": "microbundle --no-compress --format modern,cjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "init": "npm i --save-dev --legacy-peer-deps node-sass && cd example && npm i --legacy-peer-deps && node scripts/init.js",
+    "start": "run-p start:lib start:md start:example",
+    "build": "run-s build:lib build:md build:example",
+    "build:lib": "microbundle --no-compress --format modern,cjs --jsx React.createElement --jsxFragment React.Fragment",
+    "build:md": "create-md",
+    "start:md": "create-md --watch",
+    "start:lib": "microbundle watch --no-compress --format modern,cjs --jsx React.createElement --jsxFragment React.Fragment",
+    "test": "run-s test:unit test:lint test:build",
+    "test:build": "run-s build",
+    "test:lint": "eslint .",
+    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "build:example": "cd example && npm run build",
+    "start:example": "cd example && npm run start",
+    "deploy": "gh-pages -d example/build",
+    "prettier": "prettier --config .prettierrc --write 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
   },
   "files": [
     "index.js",
@@ -24,6 +41,12 @@
     "fbemitter": "^3.0.0"
   },
   "devDependencies": {
-    "microbundle": "^0.13.3"
+    "@kne/md-doc": "^0.1.6",
+    "@kne/microbundle": "^0.15.2",
+    "node-sass": "^7.0.1",
+    "npm-run-all": "^4.1.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1"
   }
 }
