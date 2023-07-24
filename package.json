@@ -1,9 +1,11 @@
 {
   "name": "@kne/use-event",
-  "version": "0.1.4",
-  "type": "module",
+  "version": "0.1.5",
   "description": "实现了事件总线的hooks，是fbemitter的再封装",
-  "main": "index.cjs",
+  "syntax": {
+    "esmodules": true
+  },
+  "main": "index.js",
   "module": "index.modern.js",
   "source": "src/index.js",
   "scripts": {
@@ -25,8 +27,8 @@
     "prettier": "prettier --config .prettierrc --write 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
   },
   "files": [
-    "index.cjs",
-    "index.cjs.map",
+    "index.js",
+    "index.js.map",
     "index.modern.js",
     "index.modern.js.map"
   ],
